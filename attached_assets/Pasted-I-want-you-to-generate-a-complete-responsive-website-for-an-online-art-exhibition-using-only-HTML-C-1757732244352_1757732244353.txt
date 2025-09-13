@@ -1,0 +1,89 @@
+I want you to generate a complete responsive website for an online art exhibition using only HTML, CSS, and JavaScript (no frameworks or external libraries).
+
+### Website Structure:
+- index.html → Homepage with title, navigation menu, and a slideshow (carousel).
+- about.html → About page with description of the exhibition in Thai.
+- gallery.html → Gallery page displaying artworks by category (5 categories, 40 artworks each as placeholders).
+- artwork.html → Artwork detail page showing title, artist, concept/idea, and large image.
+- add.html → Page with a form to add new artworks (title, artist, category, concept, upload image). This page must be visible only to admin (protected with a password prompt). On submit, save artworks into localStorage.
+- admin.html → Admin management page that lists all artworks from localStorage with options to delete or edit them (also password protected).
+- style.css → Stylesheet for the whole site.
+- script.js → JavaScript logic for gallery rendering, artwork detail view, add new artwork, admin management, and the homepage slideshow.
+
+### Homepage (index.html):
+1. Show 1 of the 5 "Best Works" artworks in a slideshow (carousel).
+2. The slideshow should automatically switch to the next artwork every 3 seconds.
+3. Each slide should display:
+   - Large responsive image.
+   - Artwork title.
+   - Artist name.
+   - A "View Details" button linking to artwork.html with the corresponding id.
+4. Navigation menu should be in Thai: "หน้าแรก", "เกี่ยวกับ", "แกลเลอรี", "เพิ่มผลงาน", "จัดการผลงาน".
+
+### Gallery (gallery.html):
+- Show artworks grouped into 5 categories:
+  1. แผ่นพับ อาชีพทัศนศิลป์
+  2. Pop-up
+  3. ประติมากรรม
+  4. Cubism Art
+  5. Thai Pop Art
+- Display artworks in a responsive grid layout.
+- Each artwork card should have:
+  - Thumbnail image.
+  - Title.
+  - Artist name.
+  - Link to artwork.html?id=<id>.
+- Use placeholders if no real images are available.
+
+### Artwork Detail (artwork.html):
+- Display large artwork image, title, artist, concept/idea.
+- Load the correct artwork by reading the id from the query string.
+- Include a "Back to Gallery" link.
+
+### Add Artwork (add.html):
+- Show a password prompt (for example password = "admin123"). If password is wrong, redirect to index.html.
+- If password is correct, display a form:
+  - Input fields: artwork title, artist name, category (dropdown with 5 categories), concept, and image upload.
+  - On submit, convert image to base64 and save into localStorage together with the artwork data.
+  - After saving, redirect back to gallery.html.
+
+### Admin Management (admin.html):
+- Show a password prompt (same password as add.html).
+- If password is correct, display all artworks stored in localStorage in a grid.
+- Each artwork card must include:
+  - Thumbnail
+  - Title
+  - Artist
+  - Category
+  - A "Delete" button to remove the artwork from localStorage
+  - An "Edit" button to update artwork details (title, artist, concept, category).
+- After deleting or editing, refresh the admin gallery view automatically.
+
+### CSS (style.css):
+1. Use Thai-friendly fonts such as "Prompt" or "Sarabun".
+2. Color theme: dark background, white text, gold as accent color.
+3. Header and navigation bar: dark background, white links, gold hover effect.
+4. Gallery: responsive grid layout with spacing and hover effect.
+5. Artwork cards: rounded corners, box-shadow, hover animation (slight scale up).
+6. Buttons: gold background, white text, hover animation.
+7. Footer: dark background, light text, centered content.
+8. Responsive design for both desktop and mobile.
+
+### JavaScript (script.js):
+- Render artworks in gallery.html from a JavaScript object (galleryData) or localStorage.
+- Support filtering by category and searching.
+- Handle saving new artworks from add.html into localStorage.
+- Load artwork details dynamically on artwork.html based on query string id.
+- Implement homepage slideshow with auto-switch every 3 seconds.
+- Implement admin features in admin.html:
+  - Display artworks from localStorage.
+  - Delete artworks.
+  - Edit artworks (update title, artist, concept, category).
+- Use comments to explain each function.
+
+### General:
+- All pages should use semantic HTML5 (header, nav, main, footer).
+- Navigation should be consistent across all pages.
+- All text content (menus, labels, placeholders) should be in Thai.
+- Include comments in code to explain important parts.
+- Code must be ready to run directly in Replit (static HTML/CSS/JS project).

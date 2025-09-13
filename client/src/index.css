@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 10%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(0, 0%, 18%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --popover: hsl(0, 0%, 18%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(45, 70%, 55%);
+  --primary-foreground: hsl(0, 0%, 10%);
+  --secondary: hsl(0, 0%, 69%);
+  --secondary-foreground: hsl(0, 0%, 10%);
+  --muted: hsl(0, 0%, 25%);
+  --muted-foreground: hsl(0, 0%, 50%);
+  --accent: hsl(0, 0%, 25%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 25%);
+  --input: hsl(0, 0%, 18%);
+  --ring: hsl(45, 70%, 55%);
+  --chart-1: hsl(45, 70%, 55%);
+  --chart-2: hsl(159, 100%, 36%);
+  --chart-3: hsl(42, 93%, 56%);
+  --chart-4: hsl(147, 79%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(0, 0%, 18%);
+  --sidebar-foreground: hsl(0, 0%, 100%);
+  --sidebar-primary: hsl(45, 70%, 55%);
+  --sidebar-primary-foreground: hsl(0, 0%, 10%);
+  --sidebar-accent: hsl(0, 0%, 25%);
+  --sidebar-accent-foreground: hsl(0, 0%, 100%);
+  --sidebar-border: hsl(0, 0%, 25%);
+  --sidebar-ring: hsl(45, 70%, 55%);
+  --font-sans: 'Sarabun', sans-serif;
+  --font-serif: 'Prompt', serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.5rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(45, 70%, 55%, 0.1);
+  --shadow-xs: 0px 2px 0px 0px hsl(45, 70%, 55%, 0.1);
+  --shadow-sm: 0px 2px 0px 0px hsl(45, 70%, 55%, 0.1), 0px 1px 2px -1px hsl(45, 70%, 55%, 0.1);
+  --shadow: 0px 2px 0px 0px hsl(45, 70%, 55%, 0.1), 0px 1px 2px -1px hsl(45, 70%, 55%, 0.1);
+  --shadow-md: 0px 2px 0px 0px hsl(45, 70%, 55%, 0.1), 0px 2px 4px -1px hsl(45, 70%, 55%, 0.1);
+  --shadow-lg: 0px 2px 0px 0px hsl(45, 70%, 55%, 0.1), 0px 4px 6px -1px hsl(45, 70%, 55%, 0.1);
+  --shadow-xl: 0px 2px 0px 0px hsl(45, 70%, 55%, 0.1), 0px 8px 10px -1px hsl(45, 70%, 55%, 0.1);
+  --shadow-2xl: 0px 2px 0px 0px hsl(45, 70%, 55%, 0.1);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Sarabun', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-muted text-foreground px-4 py-2 rounded-lg border border-border transition-all duration-300 hover:bg-accent;
+  }
+
+  .btn-danger {
+    @apply bg-destructive text-destructive-foreground px-4 py-2 rounded-lg transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5;
+  }
+
+  .artwork-card {
+    @apply bg-card rounded-lg overflow-hidden transition-all duration-300 cursor-pointer shadow-lg hover:-translate-y-1 hover:scale-105 hover:shadow-xl;
+  }
+
+  .carousel-slide {
+    @apply absolute w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out flex items-center justify-center;
+  }
+
+  .carousel-slide.active {
+    @apply opacity-100;
+  }
+
+  .form-control {
+    @apply w-full px-3 py-2 bg-input border border-border rounded-lg text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-20;
+  }
+
+  .alert-success {
+    @apply p-4 border border-green-500 bg-green-500 bg-opacity-10 text-green-500 rounded-lg;
+  }
+
+  .alert-error {
+    @apply p-4 border border-destructive bg-destructive bg-opacity-10 text-destructive rounded-lg;
+  }
+
+  .loading {
+    @apply inline-block w-5 h-5 border-2 border-border border-t-primary rounded-full animate-spin;
+  }
+}
